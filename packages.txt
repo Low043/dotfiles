@@ -9,3 +9,4 @@ nemo
 nwg-look
 flat-remix-gtk
 flat-remix-git
+rofi
