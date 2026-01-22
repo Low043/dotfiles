@@ -37,11 +37,11 @@ if [ -d "sddm" ]; then
     sudo mkdir -p "$THEME_PATH/Backgrounds"
     
     # 3. Copy custom theme config
-    if [ -f "sddm/themes/sddm-astronaut-theme/Themes/custom" ]; then
+    if [ -f "sddm/custom" ]; then
         echo "Installing custom theme configuration..."
         # Remove if exists (handles broken symlinks)
         sudo rm -f "$THEME_PATH/Themes/custom"
-        sudo cp "sddm/themes/sddm-astronaut-theme/Themes/custom" "$THEME_PATH/Themes/"
+        sudo cp "sddm/custom" "$THEME_PATH/Themes/"
         
         echo "Updating metadata.desktop to use 'custom' config..."
         if grep -q "ConfigFile=" "$THEME_PATH/metadata.desktop"; then
@@ -75,9 +75,7 @@ if [ -d "sddm" ]; then
     
     # 5. Activate SDDM Theme and Virtual Keyboard
     echo "Activating SDDM theme..."
-    if [ -f "sddm/etc/sddm.conf" ]; then
-        sudo cp sddm/etc/sddm.conf /etc/sddm.conf
-    fi
+    echo "[Theme] Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf > /dev/null
     
     echo "Configuring virtual keyboard..."
     sudo mkdir -p /etc/sddm.conf.d
