@@ -1,0 +1,75 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["clock", "pulseaudio", "network", "battery"], 
+    "clock": {
+        "format-alt": "{:L%A, %d/%m/%Y}",
+        "locale": "pt_BR.UTF-8",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode-mon-col": 4,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='white'><b>{}</b></span>",
+                "days": "<span color='white'><b>{}</b></span>",
+                "weeks": "<span color='white'><b>W{}</b></span>",
+                "weekdays": "<span color='#bbbbbb'><b>{}</b></span>",
+                "today": "<span color='#ff0000'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "Muted {icon}",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", // mute/unmute
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+    },
+    "network": {
+        "interface": "wlan0", // viewed by using ip -c a
+        "format": "{ifname}",
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/spotify": {
+        "format": "  {}",
+        "max-length": 40,
+        "interval": 1,
+        "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}'",
+        "exec-if": "pgrep spotify",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
+        "smooth-scrolling-threshold": 2,
+        "tooltip": false
+    }
+}

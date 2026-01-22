@@ -1,0 +1,14 @@
+@define-color workspace-color #000000;
+@define-color workspace-active-color #ffffff;
+
+@define-color clock-bg-color @workspace-color;
+@define-color clock-color @workspace-active-color;
+
+@define-color pulseaudio-bg-color @workspace-color;
+@define-color pulseaudio-color @workspace-active-color;
+
+@define-color network-bg-color @workspace-color;
+@define-color network-color @workspace-active-color;
+
+@define-color spotify-bg-color @workspace-color;
+@define-color spotify-color @workspace-active-color;

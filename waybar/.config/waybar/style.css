@@ -1,0 +1,72 @@
+@import url("colors.css");
+
+* {
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 14px;
+    border: none;
+    border-radius: 999px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar {
+    background: transparent;
+    color: white;
+}
+
+#workspaces button, #clock, #pulseaudio, #network, #battery {
+    margin-right: 8px;
+}
+
+#workspaces button {
+    background: @workspace-color;
+    color: @workspace-active-color;
+    min-width: 36px;
+}
+
+#workspaces button.active {
+    background: @workspace-active-color;
+    color: @workspace-color;
+    min-width: 64px;
+}
+
+#calendar-months {
+    color: red;
+}
+
+#custom-spotify {
+    background: @spotify-bg-color;
+    color: @spotify-color;
+    padding: 0 12px;
+    min-width: 200px;
+}
+
+#clock {
+    background: @clock-bg-color;
+    color: @clock-color;
+    font-weight: 800;
+    padding: 0 12px;
+}
+
+tooltip {
+    background: alpha(black, 0.5);
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: white;
+}
+
+#pulseaudio {
+    background: @pulseaudio-bg-color;
+    color: @pulseaudio-color;
+    padding: 0 10px;
+}
+
+#network {
+    background: @network-bg-color;
+    color: @network-color;
+    padding: 0 10px;
+    min-width: 72px;
+}
