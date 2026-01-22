@@ -38,9 +38,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,3 +65,45 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# --- Custom Zsh Configuration ---
+
+# 1. Autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+ZSH_PRIORITY_COMMANDS=(
+    "sudo pacman -S "
+    "poweroff"
+    "reboot"
+    "ls -l"
+    "clear"
+    "fastfetch"
+    "btop"
+    "git commit -m "
+    "git push origin "
+    "git pull origin "
+    "git checkout "
+    "git restore "
+    "git status"
+)
+
+_zsh_autosuggest_strategy_manual() {
+    local prefix="$1"
+    for command in "${ZSH_PRIORITY_COMMANDS[@]}"; do
+        if [[ "$command" == "$prefix"* ]]; then
+        typeset -g suggestion="$command"
+        return
+        fi
+    done
+}
+
+ZSH_AUTOSUGGEST_STRATEGY=(manual completion history)
+
+# 2. Keybindings
+bindkey '^I' autosuggest-accept
+bindkey '^[[Z' forward-word
+
+# 3. Completion Priorities (zstyle)
+zstyle ':completion:*' group-order directories files
+zstyle ':completion:*' tag-order 'directories' 'files' 'commands'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case-insensitive
