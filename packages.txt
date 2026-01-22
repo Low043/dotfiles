@@ -14,4 +14,6 @@ mpvpaper
 flameshot
 emoji-keyboard-bin
 sddm
-sddm-astronaut-theme-git
+qt6-svg
+qt6-virtualkeyboard
+qt6-multimedia-ffmpeg

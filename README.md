@@ -39,8 +39,7 @@ Managed using [GNU Stow](https://www.gnu.org/software/stow/).
    stow hypr
    stow kitty
    stow zsh
-   # Or install everything at once:
-   # stow */
+   # WARNING: sddm foulder should not be loaded
    ```
 
 ## Animated Wallpapers
