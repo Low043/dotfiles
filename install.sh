@@ -22,14 +22,25 @@ fi
 # 2. Install packages from list
 if [ -f "packages.txt" ]; then
     echo -e "${GREEN}==> Installing packages from packages.txt...${NC}"
-    # Filter empty lines and comments
-    PACKAGES=$(grep -vE "^\s*#|^\s*$" packages.txt | tr '\n' ' ')
     
-    if [ -n "$PACKAGES" ]; then
-        yay -S --needed --noconfirm $PACKAGES
-    else
-        echo "No packages found in packages.txt."
-    fi
+    # Read packages.txt line by line
+    while IFS= read -r package || [ -n "$package" ]; do
+        # Trim whitespace
+        package=$(echo "$package" | xargs)
+        
+        # Skip empty lines and comments
+        if [[ -z "$package" || "$package" == \#* ]]; then
+            continue
+        fi
+
+        echo -e "-> Installing ${package}..."
+        if yay -S --needed --noconfirm "$package"; then
+            echo -e "${GREEN}Successfully installed ${package}${NC}"
+        else
+            echo -e "\033[0;31mFailed to install ${package}\033[0m"
+        fi
+    done < packages.txt
+
 else
     echo "packages.txt file not found!"
 fi

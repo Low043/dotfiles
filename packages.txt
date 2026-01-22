@@ -5,3 +5,7 @@ zsh-theme-powerlevel10k-git
 ttf-meslo-nerd-font-powerlevel10k
 zsh-autosuggestions
 waybar
+nemo
+nwg-look
+flat-remix-gtk
+flat-remix-git
