@@ -27,15 +27,42 @@ Managed using [GNU Stow](https://www.gnu.org/software/stow/).
    ./install.sh
    ```
 
-3. **Apply configurations:**
+3. **Configure SDDM (Login Screen):**
+   To setup the SDDM theme and configuration, run the separate config script. This will copy system-wide configurations.
+   ```bash
+   ./sddm-config.sh
+   ```
+
+4. **Apply configurations:**
    Run stow for the packages you want to install (e.g., `hypr`, `kitty`, `zsh`):
    ```bash
    stow hypr
    stow kitty
    stow zsh
    # Or install everything at once:
-   # stow *
+   # stow */
    ```
+
+## Animated Wallpapers
+
+This setup uses animated wallpapers for both the **SDDM login screen** and the **Hyprland desktop**. Both components are configured to use a file named `default.mp4` as the source.
+
+**Path Detection:**
+The configuration automatically checks for `default.mp4` in both `~/Videos/Wallpapers/` and `~/Vídeos/Wallpapers/`, so it works out-of-the-box regardless of your system language.
+
+**How to change your wallpaper:**
+
+1.  Place your video wallpapers in your `~/Videos/Wallpapers/` (or `~/Vídeos/Wallpapers/`) folder.
+2.  Create a symbolic link named `default.mp4` pointing to the video you want to use.
+
+```bash
+# Example:
+mkdir -p ~/Videos/Wallpapers
+cd ~/Videos/Wallpapers/
+ln -sf my_cool_animation.mp4 default.mp4
+```
+
+This updates both your login screen and desktop wallpaper simultaneously.
 
 ## How to Apply Modifications
 

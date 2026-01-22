@@ -10,3 +10,8 @@ nwg-look
 flat-remix-gtk
 flat-remix-git
 rofi
+mpvpaper
+flameshot
+emoji-keyboard-bin
+sddm
+sddm-astronaut-theme-git

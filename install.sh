@@ -47,3 +47,4 @@ fi
 
 echo -e "${GREEN}==> Package installation complete!${NC}"
 echo -e "${GREEN}==> Remember to run 'stow <package>' to link your configurations.${NC}"
+echo -e "${GREEN}==> For SDDM configuration, please run './sddm-config.sh' separately.${NC}"
