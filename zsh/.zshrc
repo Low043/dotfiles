@@ -107,3 +107,9 @@ bindkey '^[[Z' forward-word
 zstyle ':completion:*' group-order directories files
 zstyle ':completion:*' tag-order 'directories' 'files' 'commands'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case-insensitive
+
+# pyenv and pyenv-virtualenv config
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
