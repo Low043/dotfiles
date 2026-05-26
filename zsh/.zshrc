@@ -62,6 +62,7 @@ source $ZSH/oh-my-zsh.sh
 # Set personal aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias spotify="docker run --rm -v /home/low/Músicas:/music spotdl/spotify-downloader"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
