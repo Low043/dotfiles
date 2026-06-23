@@ -16,3 +16,10 @@ qt6-svg
 qt6-virtualkeyboard
 qt6-multimedia-ffmpeg
 hyprsunset
+fastfetch
+ttf-jetbrains-mono-nerd
+gnome-calculator
+btop
+visual-studio-code-bin
+postman-bin
+dbeaver
