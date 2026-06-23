@@ -1,3 +1,4 @@
+usb_modeswitch
 stow
 zsh
 oh-my-zsh-git
@@ -7,8 +8,6 @@ zsh-autosuggestions
 waybar
 nemo
 nwg-look
-flat-remix-gtk
-flat-remix-git
 rofi
 mpvpaper
 flameshot
