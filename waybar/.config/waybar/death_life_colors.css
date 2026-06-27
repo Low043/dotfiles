@@ -10,5 +10,5 @@
 @define-color network-bg-color @workspace-color;
 @define-color network-color @workspace-active-color;
 
-@define-color spotify-bg-color @workspace-color;
-@define-color spotify-color @workspace-active-color;
+@define-color musicplayer-bg-color @workspace-color;
+@define-color musicplayer-color @workspace-active-color;

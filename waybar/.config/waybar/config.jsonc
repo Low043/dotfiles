@@ -5,7 +5,7 @@
     "margin-left": 8,
     "margin-right": 8,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/spotify"],
+    "modules-center": ["custom/musicplayer"],
     "modules-right": ["clock", "pulseaudio", "network", "battery"], 
     "clock": {
         "format-alt": "{:L%A, %d/%m/%Y}",
@@ -60,15 +60,15 @@
         "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-    "custom/spotify": {
-        "format": "  {}",
+    "custom/musicplayer": {
+        "format": "  {}",
         "max-length": 40,
         "interval": 1,
-        "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}'",
-        "exec-if": "pgrep spotify",
-        "on-click": "playerctl -p spotify play-pause",
-        "on-scroll-up": "playerctl -p spotify next",
-        "on-scroll-down": "playerctl -p spotify previous",
+        "exec": "playerctl -p spotify,harmonoid metadata --format '{{artist}} - {{title}}'",
+        "exec-if": "playerctl -p spotify,harmonoid status",
+        "on-click": "playerctl -p spotify,harmonoid play-pause",
+        "on-scroll-up": "playerctl -p spotify,harmonoid next",
+        "on-scroll-down": "playerctl -p spotify,harmonoid previous",
         "smooth-scrolling-threshold": 2,
         "tooltip": false
     }
