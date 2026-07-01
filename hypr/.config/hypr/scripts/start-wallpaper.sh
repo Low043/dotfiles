@@ -18,5 +18,5 @@ fi
 
 # Apply wallpaper to all connected monitors
 for monitor in $(hyprctl monitors | grep "Monitor" | awk '{print $2}'); do
-    mpvpaper -o "loop-file=inf no-audio" "$monitor" "$WALLPAPER" &
+    mpvpaper -o "hwdec=auto-safe loop-file=inf no-audio" "$monitor" "$WALLPAPER" &
 done
