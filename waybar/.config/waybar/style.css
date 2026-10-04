@@ -22,6 +22,7 @@
 #workspaces button {
     background: @workspace-color;
     color: @workspace-active-color;
+    padding: 0 4px;
     min-width: 36px;
 }
 
@@ -45,8 +46,8 @@
 #clock {
     background: @clock-bg-color;
     color: @clock-color;
-    font-weight: 800;
-    padding: 0 12px;
+    font-weight: 700;
+    padding: 0 16px;
 }
 
 tooltip {
@@ -61,12 +62,21 @@ tooltip label {
 #pulseaudio {
     background: @pulseaudio-bg-color;
     color: @pulseaudio-color;
-    padding: 0 10px;
+    padding: 0 16px;
+}
+
+#battery {
+    background: @network-bg-color;
+    color: @network-color;
+    padding: 0 16px;
+}
+
+#battery.charging {
+    color: #a6e3a1;
 }
 
 #network {
-    background: @network-bg-color;
-    color: @network-color;
-    padding: 0 10px;
-    min-width: 72px;
+    background: @battery-bg-color;
+    color: @battery-color;
+    padding: 0 16px;
 }

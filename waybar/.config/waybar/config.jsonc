@@ -6,7 +6,7 @@
     "margin-right": 8,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/musicplayer"],
-    "modules-right": ["clock", "pulseaudio", "network", "battery"], 
+    "modules-right": ["clock", "pulseaudio", "battery", "network"], 
     "clock": {
         "format-alt": "{:L%A, %d/%m/%Y}",
         "locale": "pt_BR.UTF-8",
@@ -45,7 +45,7 @@
         "tooltip": false
     },
     "network": {
-        "interface": "wlan0", // viewed by using ip -c a
+        "interface": "wl*", // viewed by using ip -c a
         "format": "{ifname}",
         "format-wifi": "{essid} ",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -58,17 +58,20 @@
     },
     "battery": {
         "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}%  {icon}",
+        "tooltip-format": "{timeTo} ({power}W)",
+        "on-click": "xfce4-power-manager-settings",
         "format-icons": ["", "", "", "", ""]
     },
     "custom/musicplayer": {
         "format": "  {}",
         "max-length": 40,
         "interval": 1,
-        "exec": "playerctl -p spotify,harmonoid metadata --format '{{artist}} - {{title}}'",
-        "exec-if": "playerctl -p spotify,harmonoid status",
-        "on-click": "playerctl -p spotify,harmonoid play-pause",
-        "on-scroll-up": "playerctl -p spotify,harmonoid next",
-        "on-scroll-down": "playerctl -p spotify,harmonoid previous",
+        "exec": "playerctl -p spotifast,spotify,harmonoid metadata --format '{{title}} - {{artist}}'",
+        "exec-if": "playerctl -p spotifast,spotify,harmonoid status",
+        "on-click": "playerctl -p spotifast,spotify,harmonoid play-pause",
+        "on-scroll-up": "playerctl -p spotifast,spotify,harmonoid next",
+        "on-scroll-down": "playerctl -p spotifast,spotify,harmonoid previous",
         "smooth-scrolling-threshold": 2,
         "tooltip": false
     }

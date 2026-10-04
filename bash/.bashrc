@@ -17,3 +17,4 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export PATH="/home/low/.pixi/bin:$PATH"
+export PATH="/home/low/.local/share/pnpm/bin:$PATH"

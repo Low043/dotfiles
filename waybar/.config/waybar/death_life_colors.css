@@ -10,5 +10,8 @@
 @define-color network-bg-color @workspace-color;
 @define-color network-color @workspace-active-color;
 
+@define-color battery-bg-color @workspace-color;
+@define-color battery-color @workspace-active-color;
+
 @define-color musicplayer-bg-color @workspace-color;
 @define-color musicplayer-color @workspace-active-color;

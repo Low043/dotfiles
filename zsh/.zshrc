@@ -110,3 +110,4 @@ zstyle ':completion:*' tag-order 'directories' 'files' 'commands'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case-insensitive
 
 export PATH="$HOME/.pixi/bin:$PATH"
+export PATH="/home/low/.local/share/pnpm/bin:$PATH"
