@@ -111,6 +111,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case-insensitive
 
 export PATH="$HOME/.pixi/bin:$PATH"
 export PATH="/home/low/.local/share/pnpm/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Secrets (tokens, chaves de API etc.) - não versionado, ver .zshrc.secrets.example
 [[ -f "$HOME/.zshrc.secrets" ]] && source "$HOME/.zshrc.secrets"
